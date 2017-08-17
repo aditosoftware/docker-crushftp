@@ -1,12 +1,10 @@
-FROM openjdk:8-jre
+FROM openjdk:8-jre-alpine
 
-RUN wget -q "https://www.crushftp.com/early8/CrushFTP8_PC.zip" -O /var/opt/CrushFTP.zip \
- && unzip -q /var/opt/CrushFTP.zip -d /var/opt/ \
- && rm -rf /var/opt/CrushFTP.zip /tmp/*
+RUN apk add --no-cache wget \
+ && wget -q "https://www.crushftp.com/early8/CrushFTP8_PC.zip" -O /tmp/CrushFTP.zip \
+ && unzip -q /tmp/CrushFTP.zip -d /var/opt/ \
+ && rm -rf /tmp/*
 
 WORKDIR /var/opt/CrushFTP8_PC
 
-ADD ./start.sh /start.sh
-RUN chmod +x /start.sh
-
-CMD ["/start.sh"]
+CMD java -jar CrushFTP.jar -d

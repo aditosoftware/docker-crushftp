@@ -2,8 +2,7 @@ FROM anapsix/alpine-java:8_jdk_unlimited
 
 LABEL maintainer "Brian Tkatch, brian@briantkatch.com"
 
-#ADD https://www.crushftp.com/early8/CrushFTP8_PC.zip /tmp/CrushFTP8_PC.zip
-ADD ./CrushFTP8_PC.zip /tmp/CrushFTP8_PC.zip
+ADD https://www.crushftp.com/early8/CrushFTP8_PC.zip /tmp/CrushFTP8_PC.zip
 ADD ./setup.sh /var/opt/setup.sh
 ADD ./crushftp_init_nobackground.sh /var/opt/run_crushftp.sh
 

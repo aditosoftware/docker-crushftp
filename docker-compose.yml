@@ -11,6 +11,5 @@ services:
       FTPADMINPASSWORD: admin
     volumes:
       - /a/data/webftp.adito.de/:/var/opt/CrushFTP8_PC/
-      - /a/data/webftp.adito.des/share:/share/
-      #- /a/data/webftp.adito.de/adito.png:/var/opt/CrushFTP8_PC/WebInterface/images/adito.png:rw
+      - /a/data/webftp.adito.des/share:/share/s
     restart: unless-stopped

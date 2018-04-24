@@ -8,7 +8,6 @@ services:
       - "80:80" # http backup port
       - "443:443" # https
     environment:
-      FTPADMIN: admin
       FTPADMINPASSWORD: admin
     volumes:
       - /a/data/webftp.adito.de/:/var/opt/CrushFTP8_PC/

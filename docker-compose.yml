@@ -1,0 +1,15 @@
+version: "2"
+services:
+
+  crushftp:
+    image: adito/crushftp:8
+    ports:
+      - "2222:2222"   # sftp
+      - "80:80" # http backup port
+      - "443:443" # https
+    environment:
+      FTPADMINPASSWORD: admin
+    volumes:
+      - /a/data/webftp.adito.de/:/var/opt/CrushFTP8_PC/
+      - /a/data/webftp.adito.des/share:/share/s
+    restart: unless-stopped

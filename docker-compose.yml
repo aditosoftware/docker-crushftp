@@ -2,7 +2,7 @@ version: "2"
 services:
 
   crushftp:
-    image: crush
+    image: adito/crushftp:8
     ports:
       - "2222:2222"   # sftp
       - "80:80" # http backup port
